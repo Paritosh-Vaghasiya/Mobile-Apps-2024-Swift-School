@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+struct UserModel: Identifiable, Codable{
+    var id: String?
+    var firstName: String
+    var lastName: String
+    var city: String
+    var email: String
+    
+    enum CodingKeys: String, CodingKey{
+        case id = "id"
+        case firstName = "firstName"
+        case lastName = "lastName"
+        case city = "city"
+        case email = "email"
+    }
+    
+    
+}

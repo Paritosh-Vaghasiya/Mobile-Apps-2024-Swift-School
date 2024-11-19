@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    //@State private var users = [UserModel]()
+    @State private var users = [UserModel]()
     @State private var errorMessage = ""
     @State private var showLoginView = false
     @State private var showUpdateUserView = false
@@ -46,7 +46,7 @@ struct MainView: View {
                         }
                     }
                     .padding()
-                    .background(Color.blue.opacity(0.2))
+                    .background(Color.red.opacity(0.2))
                     .cornerRadius(10)
                 }
                 .padding()
@@ -54,7 +54,7 @@ struct MainView: View {
                     LoginView()
                 }
                 .navigationDestination(isPresented: $showUpdateUserView){
-                    UpdateUserView(showUpdateUserView: $showUpdateUserView)
+//                    UpdateUserView(showUpdateUserView: showUpdateUserView)
                 }
             }
             .navigationTitle("User Details")

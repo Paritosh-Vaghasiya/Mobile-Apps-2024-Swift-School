@@ -17,12 +17,12 @@ struct LoginView: View {
         NavigationStack{
             VStack(spacing: 16){
                 HStack{
-                    Image(systemName: "envelope.fill")
+                    Image(systemName: "envelope")
                     TextField("Email", text: $email)
                         .keyboardType(.emailAddress)
                 }
                 HStack{
-                    Image(systemName: "lock.fill")
+                    Image(systemName: "lock")
                     SecureField("Password", text: $password)
                 }
                 if errorMessage.isEmpty == false {

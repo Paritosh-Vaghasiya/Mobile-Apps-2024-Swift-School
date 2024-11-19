@@ -12,6 +12,7 @@
 		AC2F2FDC2CE4E685006744B2 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = AC2F2FDB2CE4E685006744B2 /* PostgREST */; };
 		AC2F2FDE2CE4E685006744B2 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = AC2F2FDD2CE4E685006744B2 /* Realtime */; };
 		AC2F2FE02CE4E685006744B2 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = AC2F2FDF2CE4E685006744B2 /* Storage */; };
+		ACF392032CECD5AF004248BE /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = ACF392022CECD5AF004248BE /* Supabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 			files = (
 				AC2F2FDC2CE4E685006744B2 /* PostgREST in Frameworks */,
 				AC2F2FDA2CE4E685006744B2 /* Functions in Frameworks */,
+				ACF392032CECD5AF004248BE /* Supabase in Frameworks */,
 				AC2F2FD82CE4E685006744B2 /* Auth in Frameworks */,
 				AC2F2FE02CE4E685006744B2 /* Storage in Frameworks */,
 				AC2F2FDE2CE4E685006744B2 /* Realtime in Frameworks */,
@@ -91,6 +93,7 @@
 				AC2F2F982CE4E576006744B2 /* Mobile-Apps-2024-Swift-School */,
 				AC2F2FA92CE4E577006744B2 /* Mobile-Apps-2024-Swift-SchoolTests */,
 				AC2F2FB32CE4E577006744B2 /* Mobile-Apps-2024-Swift-SchoolUITests */,
+				ACF392012CECD5AF004248BE /* Frameworks */,
 				AC2F2F972CE4E576006744B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +106,13 @@
 				AC2F2FB02CE4E577006744B2 /* Mobile-Apps-2024-Swift-SchoolUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ACF392012CECD5AF004248BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +140,7 @@
 				AC2F2FDB2CE4E685006744B2 /* PostgREST */,
 				AC2F2FDD2CE4E685006744B2 /* Realtime */,
 				AC2F2FDF2CE4E685006744B2 /* Storage */,
+				ACF392022CECD5AF004248BE /* Supabase */,
 			);
 			productName = "Mobile-Apps-2024-Swift-School";
 			productReference = AC2F2F962CE4E576006744B2 /* Mobile-Apps-2024-Swift-School.app */;
@@ -610,6 +621,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC2F2FD62CE4E685006744B2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Storage;
+		};
+		ACF392022CECD5AF004248BE /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC2F2FD62CE4E685006744B2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
