@@ -45,7 +45,12 @@ struct LoginView: View {
     }
     
     func login() async {
-        //Fill later
+        do{
+            let _ = try await SupabaseManager.shared.signIn(email: email, password: password)
+            isLoggedIn = true
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 }
 

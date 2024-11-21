@@ -51,10 +51,10 @@ struct MainView: View {
                 }
                 .padding()
                 .navigationDestination(isPresented: $showLoginView){
-                    LoginView()
+                    ContentView()
                 }
                 .navigationDestination(isPresented: $showUpdateUserView){
-//                    UpdateUserView(showUpdateUserView: showUpdateUserView)
+                   UpdateUserView()
                 }
             }
             .navigationTitle("User Details")
@@ -62,11 +62,20 @@ struct MainView: View {
     }
     
     func fetchUsers() async{
-        //Fill later
+        do{
+            users = try await SupabaseManager.shared.fetchUserData()
+        } catch {
+            errorMessage = "Error fetching users: \(error.localizedDescription)"
+        }
     }
     
     func logout() async{
-        //Fill later
+        do{
+            try await SupabaseManager.shared.signOut()
+            showLoginView = true
+        } catch {
+            errorMessage = "Error signing out: \(error.localizedDescription)"
+        }
     }
 }
 
