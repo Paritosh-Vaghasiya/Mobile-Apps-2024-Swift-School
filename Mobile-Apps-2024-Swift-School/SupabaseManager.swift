@@ -41,7 +41,7 @@ class SupabaseManager {
     
     func createUserData(user: UserModel) async throws {
         do{
-            let data = try await client.from("Table_2").insert([
+            let _ = try await client.from("Table_2").insert([
                 "firstName": user.firstName,
                 "lastName": user.lastName,
                 "city": user.city,
@@ -88,9 +88,22 @@ class SupabaseManager {
         }
     }
     
-    func updateUser(firstName: String, lastName: String, city: String) async throws {
-        do{
+    func updateUserData(firstName: String, lastName: String, city: String) async throws {
+        guard let user = try await getSession() else {
+            throw NSError(domain: "SupabaseManager", code: 401, userInfo: [NSLocalizedDescriptionKey: "No user session"])
+        }
         
+        print("Fetching useer ID:", user.id)
+        
+        do{
+            let _ = try await client.from("Table_2").update([
+                "firstName": firstName,
+                "lastName": lastName,
+                "city": city,
+            ]).eq("id", value: user.id).execute()
+        } catch {
+            print("Update Failed:", error.localizedDescription)
+            throw error
         }
     }
 }
